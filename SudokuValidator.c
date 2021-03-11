@@ -33,6 +33,8 @@ void lector(){
     } fclose(fl);
 }
 // ---------------------------------------------------
+//Funcion que revisa que los subarreglos tengan los numeros del 1 al 9 sin repetir
+// ---------------------------------------------------
 int mostrarSubs(int c, int r){
     omp_set_num_threads(tamanio - 1);
     omp_set_nested(1);
@@ -60,6 +62,9 @@ typedef struct fThread {
     int ver_Col;
     int resulta2ado;
 } fThread;
+// ---------------------------------------------------
+//Funcion que revisa que todas las columnas tengan los numeros del 1 al 9 sin repetir
+// ---------------------------------------------------
 void *confirmarFoC(void *arg){
     omp_set_num_threads(dimensiones);
     omp_set_nested(1);
@@ -153,8 +158,5 @@ int main(int argc, char const *argv[]){
         } else {
             wait(NULL);
         }
-        
-    }
-     
-    return 0;
+    }return 0;
 }
